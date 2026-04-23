@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crónicas del Pasado | Arqueología Americana</title>
+    <style>
+        /* Paleta de colores: Arena, Piedra, Terracota y Carbón */
+        :root {
+            --color-fondo: #f4eee0;
+            --color-texto: #2c2c2c;
+            --color-acento: #a0522d; /* Terracota */
+            --color-piedra: #e0d8c3;
+            --color-borde: #bcaf94;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3e362e;
+            color: #f4eee0;
+            padding: 4rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--color-acento);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Rejilla de Artefactos */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .ficha-arqueologica {
+            background-color: var(--color-piedra);
+            border: 1px solid var(--color-borde);
+            padding: 1.5rem;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .ficha-arqueologica:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-acento);
+        }
+
+        .ficha-arqueologica img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: sepia(20%);
+            border-bottom: 2px solid var(--color-borde);
+            margin-bottom: 1rem;
+        }
+
+        .etiqueta-pais {
+            display: inline-block;
+            background: var(--color-acento);
+            color: white;
+            font-size: 0.8rem;
+            padding: 2px 10px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #3e362e;
+            margin-top: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--color-borde);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Vestigios de América</h1>
+    <p>Explorando el patrimonio cultural a través del tiempo</p>
+</header>
+
+<div class="container">
+    <section class="galeria">
+        
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Perú</div>
+            <img src="Jade-olmeca.jpg" alt="Cara Jade">
+            <h2>Cultura Moche</h2>
+            <p>Análisis detallado de la cerámica escultórica y su importancia en los rituales funerarios del norte peruano.</p>
+            <small>Data estimada: 100 d.C. - 700 d.C.</small>
+        </article>
+
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">México</div>
+            <img scr="" alt="Máscara de Jade">
+            <h2>Jade Olmeca</h2>
+            <p>Exploración de la simbología en las máscaras de jade encontradas en los yacimientos de La Venta.</p>
+            <small>Data estimada: 1200 a.C. - 400 a.C.</small>
+        </article>
+
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Guatemala</div>
+            <img src="https://via.placeholder.com/400x300" alt="Estela Maya">
+            <h2>Estelas de Tikal</h2>
+            <p>Interpretación de los glifos mayas que narran el ascenso de los señores de la selva petenera.</p>
+            <small>Periodo Clásico Maya</small>
+        </article>
+
+    </section>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
+</footer>
+
+</body>
+</html>

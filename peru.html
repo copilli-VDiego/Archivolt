@@ -3,58 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cultura Moche - Perú</title>
+    <title>Perú</title>
     <link rel="stylesheet" href="Main.css">
 </head>
 <body>
 <header>
-    <h1>Cultura Moche</h1>
+    <h1>Perú</h1>
     <p>Análisis detallado de la cerámica escultórica y su importancia en los rituales funerarios del norte peruano.</p>
 </header>
+<button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
 <div class="container">
-    <p>Más información sobre la Cultura Moche...</p>
+    <p>Más información sobre las reliquias peruanas...</p>
     <section class="galeria">
         <article class="ficha-arqueologica">
             <div class="etiqueta-pais">Reliquia 1</div>
-            <img src="reliquia1.jpg" alt="Reliquia 1">
-            <h2>Nombre de la Reliquia 1</h2>
-            <p>Descripción detallada de la reliquia encontrada en el sitio arqueológico.</p>
-            <small>Fecha estimada: XXX</small>
+            <img src="p1.jpg" alt="Reliquia 1">
+            <h2>El Señor de Sipán</h2>
+            <p>No es una sola pieza, sino el ajuar funerario completo de un gobernante Moche, destacando sus orejeras de oro y turquesa.</p>
+            <small>Fecha estimada: 300 d.C. (Aproximadamente, Cultura Moche).</small>
         </article>
         <article class="ficha-arqueologica">
             <div class="etiqueta-pais">Reliquia 2</div>
-            <img src="reliquia2.jpg" alt="Reliquia 2">
-            <h2>Nombre de la Reliquia 2</h2>
-            <p>Descripción detallada de la reliquia encontrada en el sitio arqueológico.</p>
-            <small>Fecha estimada: XXX</small>
+            <img src="1.webp" alt="Reliquia 2">
+            <h2>Lanzón Monolítico</h2>
+            <p>Una escultura de granito de 4.5 metros situada en el centro del templo de Chavín de Huántar, que representa a una deidad antropomorfa con rasgos de felino.</p>
+            <small>Fecha estimada: 900 a.C. – 500 a.C. (Horizonte Temprano, Cultura Chavín).</small>
         </article>
         <article class="ficha-arqueologica">
             <div class="etiqueta-pais">Reliquia 3</div>
-            <img src="reliquia3.jpg" alt="Reliquia 3">
-            <h2>Nombre de la Reliquia 3</h2>
-            <p>Descripción detallada de la reliquia encontrada en el sitio arqueológico.</p>
-            <small>Fecha estimada: XXX</small>
+            <img src="Tumi de Oro.jpg" alt="Reliquia 3">
+            <h2>Tumi de Oro</h2>
+            <p>Un cuchillo ceremonial de la cultura Lambayeque (o Chimú), con una empuñadura que representa a la deidad Naylamp, decorada con piedras preciosas.</p>
+            <small>Fecha estimada: 900 d.C. – 1100 d.C. (Cultura Lambayeque/Sicán).</small>
         </article>
         <article class="ficha-arqueologica">
             <div class="etiqueta-pais">Reliquia 4</div>
-            <img src="reliquia4.jpg" alt="Reliquia 4">
-            <h2>Nombre de la Reliquia 4</h2>
-            <p>Descripción detallada de la reliquia encontrada en el sitio arqueológico.</p>
-            <small>Fecha estimada: XXX</small>
+            <img src="Mantos Paracas.jpg" alt="Reliquia 4">
+            <h2>Mantos Paracas</h2>
+            <p>Textiles de algodón y lana de camélido con bordados increíblemente detallados que han sobrevivido más de 2,000 años gracias a la aridez del desierto.</p>
+            <small>Fecha estimada: 500 a.C. – 200 d.C. (Cultura Paracas Necrópolis).</small>
         </article>
         <article class="ficha-arqueologica">
             <div class="etiqueta-pais">Reliquia 5</div>
-            <img src="reliquia5.jpg" alt="Reliquia 5">
-            <h2>Nombre de la Reliquia 5</h2>
-            <p>Descripción detallada de la reliquia encontrada en el sitio arqueológico.</p>
-            <small>Fecha estimada: XXX</small>
+            <img src="Obelisco Tello.webp" alt="Reliquia 5">
+            <h2>Obelisco Tello</h2>
+            <p>Una columna de piedra prismática esculpida con complejas figuras de caimanes, plantas y seres míticos de la cultura Chavín.</p>
+            <small>Fecha estimada: 800 a.C. – 400 a.C. (Cultura Chavín).</small>
         </article>
         <article class="ficha-arqueologica">
             <div class="etiqueta-pais">Reliquia 6</div>
-            <img src="reliquia6.jpg" alt="Reliquia 6">
-            <h2>Nombre de la Reliquia 6</h2>
-            <p>Descripción detallada de la reliquia encontrada en el sitio arqueológico.</p>
-            <small>Fecha estimada: XXX</small>
+            <img src="(Quipu Inca).jpg" alt="Reliquia 6">
+            <h2>Cauri (Quipu Inca)</h2>
+            <p>Aunque son sistemas de cuerdas anudadas para contabilidad, los ejemplares complejos hallados en sitios como Caral o del periodo Inca se consideran reliquias fundamentales de su administración.</p>
+            <small>Fecha estimada: 1438 d.C. – 1533 d.C. (Horizonte Tardío, Imperio Inca).</small>
         </article>
     </section>
     <a href="Main.html" class="btn">Volver al Inicio</a>
@@ -62,5 +63,24 @@
 <footer class="footer">
     <p>2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
 </footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
 </body>
 </html>

@@ -11,50 +11,51 @@
     <h1>Guatemala</h1>
     <p>Interpretación de los glifos mayas que narran el ascenso de los señores de la selva petenera.</p>
 </header>
+<button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
 <div class="container">
     <p>Más información sobre las reliquias de Guatemala...</p>
     <section class="galeria">
         <article class="ficha-arqueologica">
-            <div class="etiqueta-pais">Reliquia 1</div>
+            <div class="etiqueta-pais">Vaso de los Glifos (Tikal)</div>
             <img src="gtm1.jpg" alt="Reliquia 1">
             <h2>Vaso de los Glifos (Tikal)</h2>
             <p>Una pieza cerámica policromada con escritura jeroglífica que detalla linajes reales y rituales sagrados.</p>
-            <small>Fecha estimada: XXX</small>
+            <small>Fecha estimada: 600 d.C. – 800 d.C. (Periodo Clásico Tardío).</small>
         </article>
         <article class="ficha-arqueologica">
-            <div class="etiqueta-pais">Reliquia 2</div>
+            <div class="etiqueta-pais">Estela E de Quiriguá</div>
             <img src="gtm2.jpg" alt="Reliquia 2">
             <h2>Estela E de Quiriguá</h2>
             <p>Es el monumento monolítico más alto del Nuevo Mundo (10.6 metros), famosa por sus intrincados relieves y precisión calendárica.</p>
-            <small>Fecha estimada: XXX</small>
+            <small>Fecha estimada: 771 d.C. (Dedicada por el gobernante K’ak’ Tiliw Chan Yopaat).</small>
         </article>
         <article class="ficha-arqueologica">
-            <div class="etiqueta-pais">Reliquia 3</div>
+            <div class="etiqueta-pais">Máscara del Dios Solar (El Zotz)</div>
             <img src="gtm3.webp" alt="Reliquia 3">
             <h2>Máscara del Dios Solar (El Zotz)</h2>
             <p>Una impresionante friso de estuco rojo que muestra las diferentes fases del sol mientras atraviesa el inframundo.</p>
-            <small>Fecha estimada: XXX</small>
+            <small>Fecha estimada: 350 d.C. – 400 d.C. (Clásico Temprano).</small>
         </article>
         <article class="ficha-arqueologica">
-            <div class="etiqueta-pais">Reliquia 4</div>
+            <div class="etiqueta-pais">Dintel 3 de Tikal</div>
             <img src="gtm4.jpg" alt="Reliquia 4">
             <h2>Dintel 3 de Tikal</h2>
             <p>Tallado en madera de chicozapote, muestra al rey Yax Nuun Ayiin II en una ceremonia tras una victoria militar.</p>
-            <small>Fecha estimada: XXX</small>
+            <small>Fecha estimada: 766 d.C. (Conmemora el final de un periodo de 20 años).</small>
         </article>
         <article class="ficha-arqueologica">
-            <div class="etiqueta-pais">Reliquia 5</div>
+            <div class="etiqueta-pais">Escalera Jeroglífica de Dos Pilas</div>
             <img src="gtm5.jpg" alt="Reliquia 5">
             <h2>Escalera Jeroglífica de Dos Pilas</h2>
             <p>Una serie de escalones tallados que narran las sangrientas guerras entre Tikal y Calakmul.</p>
-            <small>Fecha estimada: XXX</small>
+            <small>Fecha estimada: 682 d.C. (Mandada a construir por B’alaj Chan K’awiil).</small>
         </article>
         <article class="ficha-arqueologica">
-            <div class="etiqueta-pais">Reliquia 6</div>
+            <div class="etiqueta-pais">Panel de la Resurrección (Cancuén)</div>
             <img src="gtm6.jpg" alt="Reliquia 6">
             <h2>Panel de la Resurrección (Cancuén)</h2>
             <p>Una obra maestra de la escultura en piedra que muestra al gobernante local interactuando con deidades en un nivel de detalle asombroso.</p>
-            <small>Fecha estimada: XXX</small>
+            <small>Fecha estimada: 760 d.C. – 790 d.C. (Finales del Clásico).</small>
         </article>
     </section>
     <a href="Main.html" class="btn">Volver al Inicio</a>
@@ -62,5 +63,24 @@
 <footer class="footer">
     <p>2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
 </footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
 </body>
 </html>

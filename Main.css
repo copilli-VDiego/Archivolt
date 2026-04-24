@@ -108,6 +108,61 @@ h2 {
     margin-top: 4rem;
 }
 
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+    background-color: rgba(244, 238, 224, 0.95);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    border-radius: 999px;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: #18191f;
+    color: #e8e8e8;
+}
+
+body.dark-theme header {
+    background-color: #11131a;
+    color: #e8e8e8;
+    border-bottom-color: #8c5e42;
+}
+
+body.dark-theme .ficha-arqueologica {
+    background-color: #23242f;
+    border-color: #464854;
+    box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .etiqueta-pais {
+    background: #b16b40;
+}
+
+body.dark-theme h2 {
+    color: #f0e7d6;
+}
+
+body.dark-theme .btn {
+    background-color: #b16b40;
+}
+
+body.dark-theme .footer {
+    border-top-color: #464854;
+}
+
+body.dark-theme .theme-toggle {
+    background-color: rgba(35, 36, 47, 0.95);
+    color: #f4eee0;
+    border-color: #6d5c4b;
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;

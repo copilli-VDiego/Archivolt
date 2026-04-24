@@ -13,6 +13,8 @@
     <p>Explorando el patrimonio cultural a través del tiempo</p>
 </header>
 
+<button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
+
 <div class="container">
     <section class="galeria">
         
@@ -47,8 +49,27 @@
 </div>
 
 <footer class="footer">
-    <p> 2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
+    <p>Colegio Copilli -2026 Blog de Arqueología Americana - Hecho por Diego Giovani Velázquez López</p>
 </footer>
 
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
 </body>
 </html>

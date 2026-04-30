@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraguay</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+<header>
+    <h1>Paraguay</h1>
+    <p>Profundizando en los vestigios de las culturas guaraníes y jesuíticas que dejaron su huella en el territorio paraguayo.</p>
+</header>
+<button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
+<div class="container">
+    <p>Más información sobre el patrimonio arqueológico de Paraguay...</p>
+    <section class="galeria">
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Trinidad</div>
+            <img src="py1.jpg" alt="Ruinas de Trinidad">
+            <h2>Ruinas Jesuíticas de Trinidad</h2>
+            <p>Un complejo monumental del siglo XVII fundado por los jesuitas, con iglesias y plazas que muestran la fusión de arte barroco y tradición indígena.</p>
+            <small>Fecha estimada: 1706 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Cerámica Guaraní</div>
+            <img src="py2.jpg" alt="Cerámica Guaraní">
+            <h2>Cerámica Guaraní</h2>
+            <p>Fragmentos decorados con diseños geométricos y zoomorfos que documentan las técnicas de alfarería precolombina paraguaya.</p>
+            <small>Fecha estimada: 1200 d.C. – 1600 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Asentamiento Verá</div>
+            <img src="py3.jpg" alt="Asentamiento Verá">
+            <h2>Asentamiento Verá</h2>
+            <p>Restos de un poblado indígena con estructuras de cerámica y herramientas de piedra, revelando la vida cotidiana antes de la colonización.</p>
+            <small>Fecha estimada: 800 d.C. – 1500 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Ruinas de Jesús</div>
+            <img src="py4.jpg" alt="Ruinas de Jesús">
+            <h2>Misión de Jesús</h2>
+            <p>Parte del sistema jesuítico de reducciones, donde se establecieron comunidades indígenas para trabajo y educación religiosa.</p>
+            <small>Fecha estimada: 1685 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Cerámica Ñandeva</div>
+            <img src="py5.jpg" alt="Cerámica Ñandeva">
+            <h2>Cerámica Ñandeva</h2>
+            <p>Objetos de alfarería clásica de los pueblos guaraníes, con motivos naturales y usos ceremoniales.</p>
+            <small>Fecha estimada: 1000 d.C. – 1600 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Camino Guaraní</div>
+            <img src="py6.jpg" alt="Camino Guaraní">
+            <h2>Camino Guaraní</h2>
+            <p>Un tramo de rutas antiguas utilizadas por las comunidades indígenas para el intercambio comercial y espiritual.</p>
+            <small>Uso continuado desde antes del siglo XV.</small>
+        </article>
+    </section>
+    <a href="Main.html" class="btn">Volver al Inicio</a>
+</div>
+<footer class="footer">
+    <p>2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

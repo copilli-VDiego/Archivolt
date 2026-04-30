@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argentina</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+<header>
+    <h1>Argentina</h1>
+    <p>Investigación sobre los vestigios arqueológicos que revelan la historia antigua de la Pampa, la Patagonia y el Noroeste.</p>
+</header>
+<button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
+<div class="container">
+    <p>Más información sobre el patrimonio arqueológico de Argentina...</p>
+    <section class="galeria">
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Cueva de las Manos</div>
+            <img src="a1.jpg" alt="Cueva de las Manos">
+            <h2>Cueva de las Manos</h2>
+            <p>Impresionantes pinturas rupestres con manos en negativo, imágenes de guanacos y escenas de caza de hace más de 9,000 años.</p>
+            <small>Fecha estimada: 7000 a.C. – 1500 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Pucará de Tilcara</div>
+            <img src="a2.jpg" alt="Pucará de Tilcara">
+            <h2>Pucará de Tilcara</h2>
+            <p>Un asentamiento fortificado preincaico en la Quebrada de Humahuaca que muestra el desarrollo constructivo de las culturas andinas.</p>
+            <small>Fecha estimada: 1200 d.C. – 1450 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Petroglifos de Calingasta</div>
+            <img src="a3.jpg" alt="Petroglifos de Calingasta">
+            <h2>Petroglifos de Calingasta</h2>
+            <p>Grabados sobre roca con figuras de animales, signos astronómicos y símbolos de las antiguas comunidades del oeste argentino.</p>
+            <small>Fecha estimada: 2000 a.C. – 500 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Museo de Sitio</div>
+            <img src="a4.jpg" alt="Museo de Sitio Pucará">
+            <h2>Museo de Sitio en Tilcara</h2>
+            <p>Un espacio que exhibe hallazgos arqueológicos locales, incluyendo cerámica, textiles y herramientas de las sociedades andinas.</p>
+            <small>Documenta el uso humano desde 1000 a.C. hasta la época incaica.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Yacimiento Rodeo</div>
+            <img src="a5.jpg" alt="Yacimiento Rodeo">
+            <h2>Yacimiento Arqueológico de Rodeo</h2>
+            <p>Restos de antiguas viviendas y estructuras ceremoniales de las primeras comunidades agrícolas en el norte argentino.</p>
+            <small>Fecha estimada: 1200 a.C. – 300 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Casa Histórica</div>
+            <img src="a6.jpg" alt="Casa Histórica de Tucumán">
+            <h2>Casa Histórica de Tucumán</h2>
+            <p>Patrimonio que conecta el pasado prehispánico con la formación de la nación, mostrando objetos y documentos de época colonial.</p>
+            <small>Siglo XVIII – XIX.</small>
+        </article>
+    </section>
+    <a href="Main.html" class="btn">Volver al Inicio</a>
+</div>
+<footer class="footer">
+    <p>2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

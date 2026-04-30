@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chile</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+<header>
+    <h1>Chile</h1>
+    <p>Un recorrido por los hallazgos arqueológicos de la costa, los valles y la misteriosa Isla de Pascua.</p>
+</header>
+<button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
+<div class="container">
+    <p>Más información sobre las reliquias arqueológicas de Chile...</p>
+    <section class="galeria">
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Moai de Rapa Nui</div>
+            <img src="ch1.jpg" alt="Moai de Rapa Nui">
+            <h2>Moai de Rapa Nui</h2>
+            <p>Las enormes estatuas de piedra volcánica son el símbolo más famoso de la isla y representan antepasados tutelares.</p>
+            <small>Fecha estimada: 1250 d.C. – 1500 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Momias Chinchorro</div>
+            <img src="ch2.jpg" alt="Momias Chinchorro">
+            <h2>Momias Chinchorro</h2>
+            <p>Los primeros cuerpos momificados de América, preservados en el desierto costero del norte chileno hace más de 7,000 años.</p>
+            <small>Fecha estimada: 7000 a.C. – 1500 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Aldea de Tulor</div>
+            <img src="ch3.jpg" alt="Aldea de Tulor">
+            <h2>Aldea de Tulor</h2>
+            <p>Un complejo arqueológico prehispánico en el desierto de Atacama que muestra viviendas circulares y un ritual comunitario antiguo.</p>
+            <small>Fecha estimada: 400 a.C. – 900 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Petroglifos de Chug-Chug</div>
+            <img src="ch4.jpg" alt="Petroglifos de Chug-Chug">
+            <h2>Petroglifos de Chug-Chug</h2>
+            <p>Paneles con figuras humanas y geométricas talladas por los antiguos habitantes del desierto de Atacama.</p>
+            <small>Fecha estimada: 1000 a.C. – 500 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Aldea de Monte Verde</div>
+            <img src="ch5.jpg" alt="Monte Verde">
+            <h2>Monte Verde</h2>
+            <p>Uno de los asentamientos humanos más antiguos de América, con restos de viviendas y alimentos que prueban la presencia humana hace casi 14,000 años.</p>
+            <small>Fecha estimada: 14,500 a.C. – 13,000 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Momias de El Plomo</div>
+            <img src="ch6.jpg" alt="Momia de El Plomo">
+            <h2>Momias de El Plomo</h2>
+            <p>Restos ceremoniales encontrados en la cumbre del cerro El Plomo, que revelan rituales de ofrenda de los cazadores de altura.</p>
+            <small>Fecha estimada: 1450 d.C. – 1500 d.C.</small>
+        </article>
+    </section>
+    <a href="Main.html" class="btn">Volver al Inicio</a>
+</div>
+<footer class="footer">
+    <p>2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

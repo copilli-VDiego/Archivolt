@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuador</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+<header>
+    <h1>Ecuador</h1>
+    <p>Artefactos de oro y cerámica de la costa ecuatoriana que muestran influencias mesoamericanas.</p>
+</header>
+<button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
+<div class="container">
+    <p>Más información sobre las reliquias ecuatorianas...</p>
+    <section class="galeria">
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 1</div>
+            <img src="ec1.jpg" alt="Cultura La Tolita">
+            <h2>Cultura La Tolita</h2>
+            <p>Objetos de oro, cerámica y tumbas que evidencian contactos con culturas mesoamericanas.</p>
+            <small>Fecha estimada: 600 a.C. – 200 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 2</div>
+            <img src="ec2.jpg" alt="Ingapirca">
+            <h2>Ingapirca</h2>
+            <p>Ruinas incas con templos y fortalezas en la sierra ecuatoriana, mostrando la expansión del imperio.</p>
+            <small>Fecha estimada: 1400 d.C. – 1533 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 3</div>
+            <img src="ec3.jpg" alt="Valdivia">
+            <h2>Cultura Valdivia</h2>
+            <p>Figuras de cerámica y asentamientos costeros que representan una de las culturas más antiguas de Ecuador.</p>
+            <small>Fecha estimada: 3500 a.C. – 1800 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 4</div>
+            <img src="ec4.jpg" alt="Petroglifos de Cochasquí">
+            <h2>Petroglifos de Cochasquí</h2>
+            <p>Grabados en piedras que incluyen figuras geométricas y zoomorfas en la provincia de Pichincha.</p>
+            <small>Fecha estimada: 1000 a.C. – 500 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 5</div>
+            <img src="ec5.jpg" alt="Real Alto">
+            <h2>Yacimientos de Real Alto</h2>
+            <p>Asentamientos con arquitectura compleja y cerámica en la costa ecuatoriana.</p>
+            <small>Fecha estimada: 2000 a.C. – 1000 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 6</div>
+            <img src="ec6.jpg" alt="Cultura Bahía">
+            <h2>Cultura Bahía</h2>
+            <p>Cerámica policroma y tumbas que muestran influencias de culturas vecinas en Manabí.</p>
+            <small>Fecha estimada: 500 a.C. – 500 d.C.</small>
+        </article>
+    </section>
+    <a href="Main.html" class="btn">Volver al Inicio</a>
+</div>
+<footer class="footer">
+    <p>2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

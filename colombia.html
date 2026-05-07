@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colombia</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+<header>
+    <h1>Colombia</h1>
+    <p>Monumentales esculturas que representan figuras humanas y animales en el suroeste colombiano.</p>
+</header>
+<button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
+<div class="container">
+    <p>Más información sobre las reliquias colombianas...</p>
+    <section class="galeria">
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 1</div>
+            <img src="co1.jpg" alt="Parque Arqueológico de San Agustín">
+            <h2>Parque Arqueológico de San Agustín</h2>
+            <p>Más de 500 estatuas megalíticas que adornan tumbas y monumentos en el altiplano andino.</p>
+            <small>Fecha estimada: 100 d.C. – 900 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 2</div>
+            <img src="co2.jpg" alt="Ciudad Perdida">
+            <h2>Ciudad Perdida</h2>
+            <p>Ruinas de una antigua ciudad tayrona en la Sierra Nevada de Santa Marta, con terrazas y caminos empedrados.</p>
+            <small>Fecha estimada: 800 d.C. – 1600 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 3</div>
+            <img src="co3.jpg" alt="Tierradentro">
+            <h2>Hipogeos de Tierradentro</h2>
+            <p>Tumbas subterráneas decoradas con pinturas y esculturas en el departamento del Cauca.</p>
+            <small>Fecha estimada: 600 d.C. – 900 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 4</div>
+            <img src="co4.jpg" alt="Oro Quimbaya">
+            <h2>Oro Quimbaya</h2>
+            <p>Artefactos de oro finamente trabajados, incluyendo figuras zoomorfas y antropomorfas de la cultura Quimbaya.</p>
+            <small>Fecha estimada: 300 a.C. – 700 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 5</div>
+            <img src="co5.jpg" alt="Petroglifos de Sáchica">
+            <h2>Petroglifos de Sáchica</h2>
+            <p>Grabados rupestres en piedras que representan símbolos y figuras en Boyacá.</p>
+            <small>Fecha estimada: 500 a.C. – 1500 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 6</div>
+            <img src="co6.jpg" alt="Chiribiquete">
+            <h2>Chiribiquete</h2>
+            <p>Pinturas rupestres en cuevas de la Amazonía colombiana, declaradas Patrimonio de la Humanidad.</p>
+            <small>Fecha estimada: 20000 a.C. – 1000 d.C.</small>
+        </article>
+    </section>
+    <a href="Main.html" class="btn">Volver al Inicio</a>
+</div>
+<footer class="footer">
+    <p>2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

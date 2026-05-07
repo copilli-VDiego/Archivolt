@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+<header>
+    <h1>Brasil</h1>
+    <p>Sitios arqueológicos con concheros que revelan la vida de pueblos prehistóricos en la costa brasileña.</p>
+</header>
+<button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
+<div class="container">
+    <p>Más información sobre las reliquias brasileñas...</p>
+    <section class="galeria">
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 1</div>
+            <img src="br1.jpg" alt="Sambaqui de Jabuticabeira">
+            <h2>Sambaqui de Jabuticabeira</h2>
+            <p>Un sitio con montículos de conchas que datan de hace miles de años, mostrando la dieta y cultura de los pueblos pescadores.</p>
+            <small>Fecha estimada: 5000 a.C. – 1000 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 2</div>
+            <img src="br2.jpg" alt="Pedra do Salto">
+            <h2>Pedra do Salto</h2>
+            <p>Arte rupestre en rocas que representan escenas de caza y figuras humanas en el estado de Pernambuco.</p>
+            <small>Fecha estimada: 3000 a.C. – 1000 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 3</div>
+            <img src="br3.jpg" alt="Lagoa Santa">
+            <h2>Lagoa Santa</h2>
+            <p>Cuevas con pinturas rupestres y restos óseos de antiguos habitantes en Minas Gerais.</p>
+            <small>Fecha estimada: 10000 a.C. – 2000 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 4</div>
+            <img src="br4.jpg" alt="Cerámica Marajoara">
+            <h2>Cerámica Marajoara</h2>
+            <p>Artefactos de cerámica decorada de la isla de Marajó, mostrando patrones geométricos y figuras antropomorfas.</p>
+            <small>Fecha estimada: 400 d.C. – 1400 d.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 5</div>
+            <img src="br5.jpg" alt="Pedra Pintada">
+            <h2>Pedra Pintada</h2>
+            <p>Pinturas rupestres en la Amazonía que representan escenas de la vida cotidiana y mitos indígenas.</p>
+            <small>Fecha estimada: 11000 a.C. – 2000 a.C.</small>
+        </article>
+        <article class="ficha-arqueologica">
+            <div class="etiqueta-pais">Reliquia 6</div>
+            <img src="br6.jpg" alt="Sambaqui do Bacanga">
+            <h2>Sambaqui do Bacanga</h2>
+            <p>Un montículo de conchas en Maranhão que revela la dieta marina y prácticas funerarias de pueblos antiguos.</p>
+            <small>Fecha estimada: 4000 a.C. – 1000 a.C.</small>
+        </article>
+    </section>
+    <a href="Main.html" class="btn">Volver al Inicio</a>
+</div>
+<footer class="footer">
+    <p>2026 Blog de Arqueología Americana - Preservando la Memoria Histórica</p>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

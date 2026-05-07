@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Vestigios de América</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+
+<header>
+    <h1>Vestigios de América</h1>
+    <p>Explorando el patrimonio cultural a través del tiempo</p>
+</header>
+
+<div class="top-actions">
+    <a href="Main.html" class="nav-button">Inicio</a>
+    <button class="theme-toggle" id="theme-toggle">Modo oscuro</button>
+</div>
+
+<div class="container">
+    <section class="about-us-section">
+        <h2>About Us</h2>
+        <p class="about-intro">Conoce al autor y responsable de este proyecto. Completa los datos con el nombre, rol, y la información que quieras mostrar.</p>
+        <article class="team-card single-card">
+            <img class="photo-wide" src="WhatsApp Image 2026-05-07 at 8.24.09 AM.jpeg" alt="Foto del autor">
+            <h3>Diego Giovani Velázquez López</h3>
+            <p class="role">Rol: Fundador y desarrollador</p>
+            <p class="bio">Programador y diseñador web con pasión por la arqueología americana.</p>
+            <ul>
+                <li>Especialidad: Arqueología y patrimonio cultural</li>
+                <li>Ubicación: Ciudad, país</li>
+            </ul>
+        </article>
+        <article class="team-card single-card">
+            <img class="photo-tall" src="copilli.png" alt="Escuela secundaria">
+            <h3>Mi secundaria</h3>
+            <p class="role">Escuela: Colegio Copilli</p>
+            <p class="bio">El Colegio Copilli, ubicado en Tonalá, Jalisco, es una institución privada de educación básica (preescolar, primaria y secundaria) centrada en la formación integral, el constructivismo y valores. Ofrece inglés, robótica y talleres artísticos en un horario de 7:45 a 14:30 horas, con enfoque en la conciencia ambiental.</p>
+            <ul>
+                <li>Nombre: Colegio o escuela</li>
+                <li>Año de fundación: 2003</li>
+            </ul>
+        </article>
+    </section>
+</div>
+
+<footer class="footer">
+    <p>Colegio Copilli -2026 Blog de Arqueología Americana - Hecho por Diego Giovani Velázquez López</p>
+</footer>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    function applyTheme(dark) {
+        document.body.classList.toggle('dark-theme', dark);
+        themeToggle.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    }
+
+    applyTheme(isDark);
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = !document.body.classList.contains('dark-theme');
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>
